@@ -1,5 +1,5 @@
 FROM node:20 AS build
-ARG VITE_BACKEND_URL=https://fluffy-goldfish-554j6xgjpj6fvr6j-3001.app.github.dev/api/v1
+ARG VITE_BACKEND_URL=https://lifeless-vampire-j94v6qjv9rp3qqwp-3000.app.github.dev/api/v1
 WORKDIR /build
 COPY package.json .
 COPY package-lock.json .
