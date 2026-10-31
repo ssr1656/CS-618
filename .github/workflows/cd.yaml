@@ -20,6 +20,10 @@ jobs:
         with:
           service_account: ${{ secrets.GOOGLECLOUD_SERVICE_ACCOUNT }}
           credentials_json: ${{ secrets.GOOGLECLOUD_CREDENTIALS }}
+      - name: Debug image path substitution
+        run: |
+          echo "Backend Image: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/blog-backend:${{ github.sha }}"
+          echo "Frontend Image: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/blog-frontend:${{ github.sha }}"
       - name: Build and push backend image
         uses: docker/build-push-action@v4
         with:
